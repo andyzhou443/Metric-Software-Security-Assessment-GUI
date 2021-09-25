@@ -87,7 +87,7 @@ if submit:
         st.markdown("")
         st.markdown("")
 
-        st.markdown("File Analysis")
+        st.markdown(f'<b>File Analysis</b>', unsafe_allow_html=True)
 
         #CountLine
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
