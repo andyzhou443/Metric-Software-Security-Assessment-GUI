@@ -11,7 +11,7 @@ import comparison
 
 st.set_page_config(page_title = "Metric Dataset",
 					page_icon = ":bar_chart:",
-					layour = "wide")
+					layout = "wide")
 
 st.title("Metric-based Software Security Assessment Model")
 file_ = open("light-mono@2x-8-1.jpg", "rb")
