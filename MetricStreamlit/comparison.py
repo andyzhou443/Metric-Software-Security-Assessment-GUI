@@ -16,22 +16,23 @@ RATIOCOMMENTTOCODE_MEAN = 0.56208 # "RatioCommentToCode"
 
 def percentMatch(userMetric, METRIC_CODE, lineCount):
     scaleFactor = COUNTER_MEAN/lineCount # 1008/100 = 10 
+    print(scaleFactor)
     if METRIC_CODE == "CountLine":
         return (userMetric/COUNTER_MEAN) * 100
     elif METRIC_CODE == "CountLineBlank":
-        return ((userMetric/TOTALBLANKLINECOUNT_MEAN) * 100) / scaleFactor
+        return (((userMetric * scaleFactor)/TOTALBLANKLINECOUNT_MEAN) * 100)
     elif METRIC_CODE == "CountLineComment":
-        return ((userMetric/TOTALCOMMENTLINECOUNT_MEAN) * 100) / scaleFactor
+        return (((userMetric * scaleFactor)/TOTALCOMMENTLINECOUNT_MEAN) * 100)
     elif METRIC_CODE == "CountLineCode":
-        return ((userMetric/TOTALCODELINE_MEAN) * 100) / scaleFactor
+        return (((userMetric * scaleFactor)/TOTALCODELINE_MEAN) * 100)
     elif METRIC_CODE == "CountClass":
-        return ((userMetric/TOTALCLASSES_MEAN) * 100) / scaleFactor
+        return (((userMetric * scaleFactor)/TOTALCLASSES_MEAN) * 100)
     elif METRIC_CODE == "CountMethods":
-        return ((userMetric/TOTALMETHODS_MEAN) * 100) / scaleFactor
+        return (((userMetric * scaleFactor)/TOTALMETHODS_MEAN) * 100)
     elif METRIC_CODE == "RatioCommentToCode":
-        return ((userMetric/RATIOCOMMENTTOCODE_MEAN) * 100) / scaleFactor
+        return (((userMetric * scaleFactor)/RATIOCOMMENTTOCODE_MEAN) * 100)
 
-test = False
+test = True
 if test:
     print(percentMatch(111, "CountLine", 111))
     print(percentMatch(12, "CountLineBlank", 111))
@@ -40,3 +41,12 @@ if test:
     print(percentMatch(1, "CountClass", 111))
     print(percentMatch(4, "CountMethods", 111))
     print(percentMatch(0.17857142857142858, "RatioCommentToCode", 111))
+    
+    #CountBlankLine
+    percentMatchLineBlank = percentMatch(15,"CountLineBlank", 111)
+    print(percentMatchLineBlank)
+    if (percentMatchLineBlank > 100):
+       print("User has " + str(round(percentMatchLineBlank - 100)) + "% more blank lines than the average file.")
+       
+    else:
+       print("User has " + str(round(100 - percentMatchLineBlank)) + "% less blank lines than the average file.",)
