@@ -16,10 +16,10 @@ st.markdown(
 )
 
 
-st.markdown("Upload an java file")
-file1= st.file_uploader("Choose an file...", type="java")
-submit = st.button('Submit')
-st.write("Submit",submit)
+st.markdown("Upload JAVA source code to analyze")
+file1= st.file_uploader("Choose a file...", type="java")
+submit = st.button('Upload')
+st.write("Upload",submit)
 if submit:
     if file1 is not None:
         filename = file1.name
