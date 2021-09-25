@@ -42,7 +42,7 @@ df = pd.read_excel(
 
 st.dataframe(df)
 
-st.markdown(f'<h2><b>Upload JAVA source code for code metric analysis</b></h2>', unsafe_allow_html=True)
+st.markdown(f'<h3><b>Upload JAVA source code for code metric analysis</b></h3>', unsafe_allow_html=True)
 file1= st.file_uploader("Choose a file...", type="java")
 submit = st.button('Upload')
 # st.write("Upload",submit)
