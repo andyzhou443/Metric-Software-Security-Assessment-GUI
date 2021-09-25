@@ -33,11 +33,14 @@ if submit:
         Content = str(file1.read(),"utf-8")
         CoList = Content.split("\n")
         for line in CoList:
+            #Check line
             if line:
                 Counter+= 1
             lineWithoutWhitespace = line.strip()
+            #check if blank line
             if not lineWithoutWhitespace:
                 totalBlankLineCount += 1
+            #check if line is comment
             elif lineWithoutWhitespace.startswith(commentSymbol):
                 totalCommentLineCount += 1
         totalCodeLine = Counter - totalBlankLineCount - totalCommentLineCount
