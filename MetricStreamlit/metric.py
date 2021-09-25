@@ -94,7 +94,7 @@ if submit:
         if (percentMatchCounter > 100):
             st.write("User has " + str(round(percentMatchCounter - 100)) + "% more lines in the program than the average file.")
         else:
-            st.write("User has " + str(round(100 - percentMatchCounter)) + "% less lines of code than the average file.",)
+            st.write("User has " + str(round(100 - percentMatchCounter)) + "% less lines in the program than the average file.",)
         
         #CountBlankLine
         percentMatchLineBlank = comparison.percentMatch(totalBlankLineCount,"CountLineBlank", Counter)
