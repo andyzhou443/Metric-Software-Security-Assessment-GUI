@@ -117,14 +117,14 @@ if submit:
         if (percentMatchCounter > 100):
             st.write("User has " + str(round(percentMatchCounter - 100)) + "% more lines of code than the average file.")
         else:
-            st.write("User has " + str(round(100 - percentMatchCounter)) + "% more lines of code than the average file.",)
+            st.write("User has " + str(round(100 - percentMatchCounter)) + "% less lines of code than the average file.",)
         
         #CountClass
         percentMatchCounter = comparison.percentMatch(totalClasses,"CountClass", Counter)
         if (percentMatchCounter > 100):
             st.write("User has " + str(round(percentMatchCounter - 100)) + "% more classes than the average file.")
         else:
-            st.write("User has " + str(round(100 - percentMatchCounter)) + "% more classes than the average file.",)
+            st.write("User has " + str(round(100 - percentMatchCounter)) + "% less classes than the average file.",)
         
         #RatioCommentToCode
         percentMatchCounter = comparison.percentMatch(totalCommentLineCount/totalCodeLine,"RatioCommentToCode", Counter)
