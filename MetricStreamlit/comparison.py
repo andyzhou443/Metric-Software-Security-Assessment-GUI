@@ -9,16 +9,17 @@ TOTALMETHODS_MEAN = 42.88         # "CountMethods"
 RATIOCOMMENTTOCODE_MEAN = 0.56208 # "RatioCommentToCode"
 
 # Param: Number userMetric 
-# Param: int lineCount -
+# Param: int lineCount - CountLine
 # Param: String METRIC_CODE - USE ONE OF CODES ABOVE TO TELL WHICH METRIC TO USE
 # Return: Number (in percent)
 # (UserMetric/DatabaseMetricMean) x 100 SCALED
 
-def percentMatch(userMetric, lineCount, METRIC_CODE):
+def percentMatch(userMetric, METRIC_CODE, lineCount):
+    scaleFactor = COUNTER_MEAN/lineCount # 1008/100 = 10 
     if METRIC_CODE == "CountLine":
         return (userMetric/COUNTER_MEAN) * 100
     elif METRIC_CODE == "CountLineBlank":
-        return (userMetric/TOTALBLANKLINECOUNT_MEAN) * 100
+        return (userMetric/TOTALBLANKLINECOUNT_MEAN) * 100 
     elif METRIC_CODE == "CountLineComment":
         return (userMetric/TOTALCOMMENTLINECOUNT_MEAN) * 100
     elif METRIC_CODE == "CountLineCode":
