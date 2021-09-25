@@ -25,7 +25,7 @@ st.markdown("To accomplish our goal, we will characterize the software metrics s
 st.markdown("")
 st.markdown("")
 
-st.markdown("<b>Upload JAVA source code for code metric analysis</b>")
+st.markdown("Upload JAVA source code for code metric analysis")
 file1= st.file_uploader("Choose a file...", type="java")
 submit = st.button('Upload')
 # st.write("Upload",submit)
@@ -67,8 +67,6 @@ if submit:
         st.write("CountClass : ",totalClasses)
         st.write("CountMethods:", totalMethods)
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
-        st.markdown("")
-        st.markdown("")
         
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
@@ -76,5 +74,11 @@ if submit:
         else:
             st.write("User has " + str(round(100 - percentMatchCounter)) + " more lines of code than the average file.",)
         
-        st.markdown("")
+        percentMatchLineBlank = comparison.percentMatch(totalBlankLineCount,"CountLineBlank", Counter)
+        if (percentMatchLineBlank > 100):
+            st.write("User has " + str(round(percentMatchLineBlank - 100)) + " more blank lines than the average file.")
+        else:
+            st.write("User has " + str(round(100 - percentMatchLineBlank)) + " more blank lines than the average file.",)
+        
+        
         st.markdown("Made with ❤️ and ☕")
