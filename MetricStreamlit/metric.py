@@ -27,7 +27,7 @@ st.markdown("The following datasheet contains the data of 250 files of fixed and
 st.markdown("")
 
 
-st.markdown("Upload JAVA source code to analyze")
+st.markdown("Upload JAVA source code for code metric analysis")
 file1= st.file_uploader("Choose a file...", type="java")
 submit = st.button('Upload')
 # st.write("Upload",submit)
