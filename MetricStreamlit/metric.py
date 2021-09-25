@@ -42,7 +42,7 @@ df = pd.read_excel(
 
 st.dataframe(df)
 
-st.markdown(f'<b>Upload JAVA source code for code metric analysis</b>', unsafe_allow_html=True)
+st.markdown(f'<h2><b>Upload JAVA source code for code metric analysis</b></h2>', unsafe_allow_html=True)
 file1= st.file_uploader("Choose a file...", type="java")
 submit = st.button('Upload')
 # st.write("Upload",submit)
@@ -87,7 +87,7 @@ if submit:
         st.markdown("")
         st.markdown("")
 
-        st.markdown(f'<b>File Analysis</b>', unsafe_allow_html=True)
+        st.markdown(f'<h3><b>File Analysis</b></h3>', unsafe_allow_html=True)
 
         #CountLine
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
