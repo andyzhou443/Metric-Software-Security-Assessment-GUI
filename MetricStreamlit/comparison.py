@@ -19,22 +19,22 @@ def percentMatch(userMetric, METRIC_CODE, lineCount):
     if METRIC_CODE == "CountLine":
         return (userMetric/COUNTER_MEAN) * 100
     elif METRIC_CODE == "CountLineBlank":
-        return (userMetric/TOTALBLANKLINECOUNT_MEAN) * 100 
+        return ((userMetric/TOTALBLANKLINECOUNT_MEAN) * 100) / scaleFactor
     elif METRIC_CODE == "CountLineComment":
-        return (userMetric/TOTALCOMMENTLINECOUNT_MEAN) * 100
+        return ((userMetric/TOTALCOMMENTLINECOUNT_MEAN) * 100) / scaleFactor
     elif METRIC_CODE == "CountLineCode":
-        return (userMetric/TOTALCODELINE_MEAN) * 100
+        return ((userMetric/TOTALCODELINE_MEAN) * 100) / scaleFactor
     elif METRIC_CODE == "CountClass":
-        return (userMetric/TOTALCLASSES_MEAN) * 100
+        return ((userMetric/TOTALCLASSES_MEAN) * 100) / scaleFactor
     elif METRIC_CODE == "CountMethods":
-        return (userMetric/TOTALMETHODS_MEAN) * 100
+        return ((userMetric/TOTALMETHODS_MEAN) * 100) / scaleFactor
     elif METRIC_CODE == "RatioCommentToCode":
-        return (userMetric/RATIOCOMMENTTOCODE_MEAN) * 100
+        return ((userMetric/RATIOCOMMENTTOCODE_MEAN) * 100) / scaleFactor
 
-print(percentMatch(111, "CountLine"))
-print(percentMatch(12, "CountLineBlank"))
-print(percentMatch(15, "CountLineComment"))
-print(percentMatch(84, "CountLineCode"))
-print(percentMatch(1, "CountClass"))
-print(percentMatch(0, "CountMethods"))
-print(percentMatch(0.17857142857142858, "RatioCommentToCode"))
+print(percentMatch(111, "CountLine", 111))
+print(percentMatch(12, "CountLineBlank", 111))
+print(percentMatch(15, "CountLineComment", 111))
+print(percentMatch(84, "CountLineCode", 111))
+print(percentMatch(1, "CountClass", 111))
+print(percentMatch(4, "CountMethods", 111))
+print(percentMatch(0.17857142857142858, "RatioCommentToCode", 111))
