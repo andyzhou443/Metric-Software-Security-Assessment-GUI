@@ -70,15 +70,14 @@ if submit:
         
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
-            st.write("User has " + str(round(percentMatchCounter - 100)) + " more lines of code than the average file.")
+            st.write("User has " + str(round(percentMatchCounter - 100)) + "% more lines of code than the average file.")
         else:
-            st.write("User has " + str(round(100 - percentMatchCounter)) + " more lines of code than the average file.",)
+            st.write("User has " + str(round(100 - percentMatchCounter)) + "% more lines of code than the average file.",)
         
         percentMatchLineBlank = comparison.percentMatch(totalBlankLineCount,"CountLineBlank", Counter)
         if (percentMatchLineBlank > 100):
-            st.write("User has " + str(round(percentMatchLineBlank - 100)) + " more blank lines than the average file.")
+            st.write("User has " + str(round(percentMatchLineBlank - 100)) + "% more blank lines than the average file.")
         else:
-            st.write("User has " + str(round(100 - percentMatchLineBlank)) + " more blank lines than the average file.",)
-        
+            st.write("User has " + str(round(100 - percentMatchLineBlank)) + "% more blank lines than the average file.",)
         
         st.markdown("Made with ❤️ and ☕")
