@@ -3,6 +3,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import codecs
 import base64
+import re           #regex matching
 
 st.title("Metric Software Security Assessment")
 file_ = open("pic.jpg", "rb")
@@ -19,7 +20,7 @@ st.markdown(
 st.markdown("Upload JAVA source code to analyze")
 file1= st.file_uploader("Choose a file...", type="java")
 submit = st.button('Upload')
-st.write("Upload",submit)
+# st.write("Upload",submit)
 if submit:
     if file1 is not None:
         filename = file1.name
