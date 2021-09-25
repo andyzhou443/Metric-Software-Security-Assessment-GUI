@@ -44,7 +44,7 @@ if submit:
             elif lineWithoutWhitespace.startswith(commentSymbol):
                 totalCommentLineCount += 1
             #check for class declaration
-            classMatch = re.compile(r'^(?|(public)|(private)|(protected)) class')
+            classMatch = re.compile(r'^(?:public|private|protected) class')
             if classMatch.match(line):
                 totalclasses += 1
         totalCodeLine = Counter - totalBlankLineCount - totalCommentLineCount
