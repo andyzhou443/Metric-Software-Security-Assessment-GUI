@@ -25,7 +25,7 @@ st.markdown("To accomplish our goal, we will characterize the software metrics s
 st.markdown("")
 st.markdown("")
 
-st.markdown("<b>Upload JAVA source code for code metric analysis</b>")
+st.markdown(f'<b>Upload JAVA source code for code metric analysis</b>', unsafe_allow_html=True)
 file1= st.file_uploader("Choose a file...", type="java")
 submit = st.button('Upload')
 # st.write("Upload",submit)
