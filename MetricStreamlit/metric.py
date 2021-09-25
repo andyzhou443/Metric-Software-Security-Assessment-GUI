@@ -72,4 +72,4 @@ if submit:
         
 
         
-        
+        st.markdown("Made with ❤️ and ☕")
