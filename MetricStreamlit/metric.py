@@ -67,6 +67,8 @@ if submit:
         st.write("CountClass : ",totalClasses)
         st.write("CountMethods:", totalMethods)
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
+        st.markdown("")
+        st.markdown("")
         
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
@@ -74,5 +76,5 @@ if submit:
         else:
             st.write("User has " + str(round(100 - percentMatchCounter)) + " percent more of CountLine.",)
         
-        
+        st.markdown("")
         st.markdown("Made with ❤️ and ☕")
