@@ -12,7 +12,7 @@ data_url = base64.b64encode(contents).decode("utf-8")
 file_.close()
 
 st.markdown(
-    f'<img src="data:image/jpg;base64,{data_url}" alt="cat jpg" style="margin-left:auto;margin-right:auto;" width="800" height="300">',
+    f'<img src="data:image/jpg;base64,{data_url}" alt="cat jpg" style="margin-left:auto;margin-right:auto;" width="470" height="300">',
     unsafe_allow_html=True,
 )
 
