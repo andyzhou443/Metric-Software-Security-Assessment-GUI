@@ -82,7 +82,7 @@ if submit:
         st.write("CountLineComment : ",totalCommentLineCount)
         st.write("CountLineCode : ",totalCodeLine)
         st.write("CountClass : ",totalClasses)
-        st.write("CountMethods:", totalMethods)
+        #st.write("CountMethods:", totalMethods)
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
         st.markdown("")
         st.markdown("")
