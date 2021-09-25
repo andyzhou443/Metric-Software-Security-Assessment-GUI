@@ -3,6 +3,8 @@ import streamlit as st
 import streamlit.components.v1 as components
 import codecs
 import base64
+import pandas as pd  #pip install pandas openpyxl
+import plotly.express as px
 import re           #regex matching
 import comparison
 
@@ -24,6 +26,22 @@ st.markdown("")
 st.markdown("To accomplish our goal, we will characterize the software metrics so that they can capture security specific properties of code. For this, we will identify the threshold limits for existing software metrics beyond which a code acts vulnerable.")
 st.markdown("")
 st.markdown("")
+
+st.set_page_config(page_title = "Metric Dataset",
+					page_icon = ":bar_chart:",
+					layour = "wide")
+
+df = pd.read_excel(
+	io='Data.xlsx',
+	engine='openpyxl',
+	sheet_name='Sheet1',
+	skiprows=1,
+	usecols='D:CE',
+	nrows=128,
+)
+
+st.dataframe(df)
+
 
 st.markdown("Upload JAVA source code for code metric analysis")
 file1= st.file_uploader("Choose a file...", type="java")
@@ -69,7 +87,7 @@ if submit:
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
         st.markdown("")
         st.markdown("")
-        
+
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
             st.write("User has " + str(round(percentMatchCounter - 100)) + " more lines of code than the average file.")
