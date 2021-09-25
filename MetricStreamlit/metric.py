@@ -5,7 +5,7 @@ import codecs
 import base64
 import re           #regex matching
 
-st.title("Metric Software Security Assessment")
+st.title("Metric-based Software Security Assessment Model")
 file_ = open("light-mono@2x-8-1.jpg", "rb")
 contents = file_.read()
 data_url = base64.b64encode(contents).decode("utf-8")
