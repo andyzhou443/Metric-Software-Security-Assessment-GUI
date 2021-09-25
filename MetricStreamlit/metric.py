@@ -43,9 +43,14 @@ if submit:
             #check if line is comment
             elif lineWithoutWhitespace.startswith(commentSymbol):
                 totalCommentLineCount += 1
+            #check for class declaration
+            classMatch = re.compile("^(?|(public,private class")
+            if classMatch.match(line):
+                totalclasses += 1
         totalCodeLine = Counter - totalBlankLineCount - totalCommentLineCount
         st.write("CountLine : ",Counter)
         st.write("CountLineBlank : ",totalBlankLineCount)
         st.write("CountLineComment : ",totalCommentLineCount)
-        st.write("CountLineCode  : ",totalCodeLine)
+        st.write("CountLineCode : ",totalCodeLine)
+        st.write("CountClass : ",totalclasses)
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
