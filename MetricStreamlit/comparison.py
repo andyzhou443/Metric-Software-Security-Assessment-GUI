@@ -17,9 +17,9 @@ RATIOCOMMENTTOCODE_MEAN = 0.56208 # "RatioCommentToCode"
 def percentMatch(userMetric, METRIC_CODE, lineCount):
     scaleFactor = COUNTER_MEAN/lineCount # 1008/100 = 10 
     print(scaleFactor)
-    if METRIC_CODE == "CountLine":
-        return (userMetric/COUNTER_MEAN) * 100
-    elif METRIC_CODE == "CountLineBlank":
+    #if METRIC_CODE == "CountLine":
+    #    return (userMetric/COUNTER_MEAN) * 100
+    if METRIC_CODE == "CountLineBlank":
         return (((userMetric * scaleFactor)/TOTALBLANKLINECOUNT_MEAN) * 100)
     elif METRIC_CODE == "CountLineComment":
         return (((userMetric * scaleFactor)/TOTALCOMMENTLINECOUNT_MEAN) * 100)
