@@ -4,6 +4,7 @@ import streamlit.components.v1 as components
 import codecs
 import base64
 import re           #regex matching
+import comparison
 
 st.title("Metric-based Software Security Assessment Model")
 file_ = open("light-mono@2x-8-1.jpg", "rb")
@@ -20,12 +21,9 @@ st.markdown("")
 st.markdown("")
 st.markdown("   The goal of this research is to make the current software metrics more security-centric by identifying threshold values for the metrics based on which a file can be interpreted as a vulnerable file. This research will assist the developers in secure software development through the security assessment of their code using the values of the metrics.") 
 st.markdown("")
-st.markdown("        To accomplish our goal, we will characterize the software metrics so that they can capture security specific properties of code. For this, we will identify the threshold limits for existing software metrics beyond which a code acts vulnerable.")
+st.markdown("   To accomplish our goal, we will characterize the software metrics so that they can capture security specific properties of code. For this, we will identify the threshold limits for existing software metrics beyond which a code acts vulnerable.")
 st.markdown("")
 st.markdown("")
-st.markdown("The following datasheet contains the data of 250 files of fixed and vulnerable code from open-source code. The metrics of the codes were generated from Understand by Sci Tools software. This is used to compare to the user's code.")
-st.markdown("")
-
 
 st.markdown("Upload JAVA source code to analyze")
 file1= st.file_uploader("Choose a file...", type="java")
@@ -70,6 +68,9 @@ if submit:
         st.write("CountMethods:", totalMethods)
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
         
-
-        
+        if (percentMatch(Counter,"CountLine") > 100):
+            st.write(f"User has {percentMatch(Counter,"CountLine") - 100} percent more of CountLine.")
+        else:
+            st.write(f"User has {percentMatch(Counter,"CountLine") - 100} percent more of CountLine.")
+ 
         
