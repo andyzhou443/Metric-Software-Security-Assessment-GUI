@@ -68,7 +68,7 @@ if submit:
         st.write("CountMethods:", totalMethods)
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
         
-        percentMatchCounter = percentMatch(Counter,"CountLine", Counter)
+        percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
             st.write("User has" + (percentMatchCounter - 100) + "percent more of CountLine.")
         else:
