@@ -31,10 +31,12 @@ def percentMatch(userMetric, METRIC_CODE, lineCount):
     elif METRIC_CODE == "RatioCommentToCode":
         return ((userMetric/RATIOCOMMENTTOCODE_MEAN) * 100) / scaleFactor
 
-print(percentMatch(111, "CountLine", 111))
-print(percentMatch(12, "CountLineBlank", 111))
-print(percentMatch(15, "CountLineComment", 111))
-print(percentMatch(84, "CountLineCode", 111))
-print(percentMatch(1, "CountClass", 111))
-print(percentMatch(4, "CountMethods", 111))
-print(percentMatch(0.17857142857142858, "RatioCommentToCode", 111))
+test = False
+if test:
+    print(percentMatch(111, "CountLine", 111))
+    print(percentMatch(12, "CountLineBlank", 111))
+    print(percentMatch(15, "CountLineComment", 111))
+    print(percentMatch(84, "CountLineCode", 111))
+    print(percentMatch(1, "CountClass", 111))
+    print(percentMatch(4, "CountMethods", 111))
+    print(percentMatch(0.17857142857142858, "RatioCommentToCode", 111))
