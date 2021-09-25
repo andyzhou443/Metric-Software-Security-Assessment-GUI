@@ -70,7 +70,7 @@ if submit:
         
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
-            st.write("User has" + (percentMatchCounter - 100) + "percent more of CountLine.")
+            st.write("User has" + str(percentMatchCounter - 100) + "percent more of CountLine.")
         else:
-            st.write("User has" + (100 - percentMatchCounter) + "percent more of CountLine.",)
+            st.write("User has" + str(100 - percentMatchCounter) + "percent more of CountLine.",)
         
