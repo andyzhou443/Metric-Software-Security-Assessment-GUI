@@ -67,10 +67,14 @@ if submit:
         st.write("CountClass : ",totalClasses)
         st.write("CountMethods:", totalMethods)
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
+        st.markdown("")
+        st.markdown("")
         
-        percentMatchCounter = percentMatch(Counter,"CountLine", Counter)
+        percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
-            st.write("User has" + (percentMatchCounter - 100) + "percent more of CountLine.")
+            st.write("User has " + str(round(percentMatchCounter - 100)) + " more lines of code than the average file.")
         else:
-            st.write("User has" + (100 - percentMatchCounter) + "percent more of CountLine.",)
+            st.write("User has " + str(round(100 - percentMatchCounter)) + " more lines of code than the average file.",)
         
+        st.markdown("")
+        st.markdown("Made with ❤️ and ☕")
