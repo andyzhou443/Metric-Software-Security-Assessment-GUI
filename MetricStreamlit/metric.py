@@ -10,8 +10,7 @@ import comparison
 
 
 st.set_page_config(page_title = "Metric Dataset",
-					page_icon = ":bar_chart:",
-					layout = "wide")
+					page_icon = ":bar_chart:")
 
 st.title("Metric-based Software Security Assessment Model")
 file_ = open("light-mono@2x-8-1.jpg", "rb")
@@ -90,26 +89,28 @@ if submit:
         st.markdown("")
         st.markdown("")
 
+        st.markdown("File Analysis")
+
         #CountLine
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
             st.write("User has " + str(round(percentMatchCounter - 100)) + "% more lines in the program than the average file.")
         else:
-            st.write("User has " + str(round(100 - percentMatchCounter)) + "% more lines in the program than the average file.",)
+            st.write("User has " + str(round(100 - percentMatchCounter)) + "% less lines of code than the average file.",)
         
         #CountBlankLine
         percentMatchLineBlank = comparison.percentMatch(totalBlankLineCount,"CountLineBlank", Counter)
         if (percentMatchLineBlank > 100):
             st.write("User has " + str(round(percentMatchLineBlank - 100)) + "% more blank lines than the average file.")
         else:
-            st.write("User has " + str(round(100 - percentMatchLineBlank)) + "% more blank lines than the average file.",)
+            st.write("User has " + str(round(100 - percentMatchLineBlank)) + "% less blank lines than the average file.",)
         
         #CountCommentLine
         percentMatchLineComment = comparison.percentMatch(totalBlankLineCount,"CountLineComment", Counter)
         if (percentMatchLineComment > 100):
             st.write("User has " + str(round(percentMatchLineComment - 100)) + "% more comment lines than the average file.")
         else:
-            st.write("User has " + str(round(100 - percentMatchLineComment)) + "% more comment lines than the average file.",)
+            st.write("User has " + str(round(100 - percentMatchLineComment)) + "% less comment lines than the average file.",)
         
         #CountLineCode
         percentMatchCounter = comparison.percentMatch(totalCodeLine,"CountLineCode", Counter)
@@ -132,4 +133,6 @@ if submit:
         else:
             st.write("User has a " + str(round(100 - percentMatchCounter)) + "% less ratio of comments to code than the average file.",)
         
-        st.markdown("Made with ❤️ and ☕")
+        
+st.markdown("")
+st.markdown("Made with ❤️ and ☕")
