@@ -29,7 +29,7 @@ if submit:
         commentSymbol = "*"
         totalBlankLineCount = 0
         totalCommentLineCount = 0
-        totalclasses=0
+        totalClasses=0
         Content = str(file1.read(),"utf-8")
         CoList = Content.split("\n")
         for line in CoList:
@@ -46,11 +46,11 @@ if submit:
             #check for class declaration
             classMatch = re.compile(r'^(?:public|private|protected) class')
             if classMatch.match(line):
-                totalclasses += 1
+                totalClasses += 1
         totalCodeLine = Counter - totalBlankLineCount - totalCommentLineCount
         st.write("CountLine : ",Counter)
         st.write("CountLineBlank : ",totalBlankLineCount)
         st.write("CountLineComment : ",totalCommentLineCount)
         st.write("CountLineCode : ",totalCodeLine)
-        st.write("CountClass : ",totalclasses)
+        st.write("CountClass : ",totalClasses)
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
