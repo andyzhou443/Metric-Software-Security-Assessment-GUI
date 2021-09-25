@@ -10,8 +10,7 @@ import comparison
 
 
 st.set_page_config(page_title = "Metric Dataset",
-					page_icon = ":bar_chart:",
-					layout = "wide")
+					page_icon = ":bar_chart:")
 
 st.title("Metric-based Software Security Assessment Model")
 file_ = open("light-mono@2x-8-1.jpg", "rb")
@@ -90,6 +89,8 @@ if submit:
         st.markdown("")
         st.markdown("")
 
+        st.markdown("File Analysis")
+
         #CountLine
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
@@ -111,4 +112,5 @@ if submit:
         else:
             st.write("User has " + str(round(100 - percentMatchLineComment)) + "% more comment lines than the average file.",)
         
-        st.markdown("Made with ❤️ and ☕")
+st.markdown("")
+st.markdown("Made with ❤️ and ☕")
