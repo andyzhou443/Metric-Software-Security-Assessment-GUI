@@ -32,7 +32,7 @@ def percentMatch(userMetric, METRIC_CODE, lineCount):
     elif METRIC_CODE == "RatioCommentToCode":
         return (((userMetric * scaleFactor)/RATIOCOMMENTTOCODE_MEAN) * 100)
 
-test = True
+test = False
 if test:
     print(percentMatch(111, "CountLine", 111))
     print(percentMatch(12, "CountLineBlank", 111))
