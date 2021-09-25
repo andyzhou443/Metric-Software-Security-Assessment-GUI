@@ -30,6 +30,7 @@ if submit:
         totalBlankLineCount = 0
         totalCommentLineCount = 0
         totalClasses=0
+        totalMethods=0
         Content = str(file1.read(),"utf-8")
         CoList = Content.split("\n")
         for line in CoList:
@@ -47,6 +48,9 @@ if submit:
             classMatch = re.compile(r'^(?:public|private|protected) class')
             if classMatch.match(line):
                 totalClasses += 1
+            methodMatch = re.compile(r'^(?:public|private|protected)*[(]*[)]$')
+            if methodMatch.match(line):
+                totalMethods += 1
         totalCodeLine = Counter - totalBlankLineCount - totalCommentLineCount
         st.write("CountLine : ",Counter)
         st.write("CountLineBlank : ",totalBlankLineCount)
