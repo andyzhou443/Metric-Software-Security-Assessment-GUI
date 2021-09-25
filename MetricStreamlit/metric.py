@@ -19,13 +19,13 @@ st.markdown(
 
 st.markdown("")
 st.markdown("")
-st.markdown("   The goal of this research is to make the current software metrics more security-centric by identifying threshold values for the metrics based on which a file can be interpreted as a vulnerable file. This research will assist the developers in secure software development through the security assessment of their code using the values of the metrics.") 
+st.markdown("The goal of this research is to make the current software metrics more security-centric by identifying threshold values for the metrics based on which a file can be interpreted as a vulnerable file. This research will assist the developers in secure software development through the security assessment of their code using the values of the metrics.") 
 st.markdown("")
-st.markdown("   To accomplish our goal, we will characterize the software metrics so that they can capture security specific properties of code. For this, we will identify the threshold limits for existing software metrics beyond which a code acts vulnerable.")
+st.markdown("To accomplish our goal, we will characterize the software metrics so that they can capture security specific properties of code. For this, we will identify the threshold limits for existing software metrics beyond which a code acts vulnerable.")
 st.markdown("")
 st.markdown("")
 
-st.markdown("Upload JAVA source code to analyze")
+st.markdown("Upload JAVA source code for code metric analysis")
 file1= st.file_uploader("Choose a file...", type="java")
 submit = st.button('Upload')
 # st.write("Upload",submit)
