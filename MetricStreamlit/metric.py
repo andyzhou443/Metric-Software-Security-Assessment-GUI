@@ -3,6 +3,8 @@ import streamlit as st
 import streamlit.components.v1 as components
 import codecs
 import base64
+import pandas as pd  #pip install pandas openpyxl
+import plotly.express as px
 import re           #regex matching
 import comparison
 
@@ -25,7 +27,24 @@ st.markdown("To accomplish our goal, we will characterize the software metrics s
 st.markdown("")
 st.markdown("")
 
+st.set_page_config(page_title = "Metric Dataset",
+					page_icon = ":bar_chart:",
+					layour = "wide")
+
+df = pd.read_excel(
+	io='Data.xlsx',
+	engine='openpyxl',
+	sheet_name='Sheet1',
+	skiprows=1,
+	usecols='D:CE',
+	nrows=128,
+)
+
+st.dataframe(df)
+
+
 st.markdown("Upload JAVA source code for code metric analysis")
+st.markdown(f'<b>Upload JAVA source code for code metric analysis</b>', unsafe_allow_html=True)
 file1= st.file_uploader("Choose a file...", type="java")
 submit = st.button('Upload')
 # st.write("Upload",submit)
@@ -67,6 +86,9 @@ if submit:
         st.write("CountClass : ",totalClasses)
         st.write("CountMethods:", totalMethods)
         st.write("RatioCommentToCode  : ",totalCommentLineCount/totalCodeLine)
+        st.markdown("")
+        st.markdown("")
+
         
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
