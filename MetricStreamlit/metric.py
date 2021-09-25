@@ -29,7 +29,7 @@ st.markdown("")
 
 st.set_page_config(page_title = "Metric Dataset",
 					page_icon = ":bar_chart:",
-					layour = "wide")
+					layout = "wide")
 
 df = pd.read_excel(
 	io='Data.xlsx',
