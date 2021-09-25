@@ -90,11 +90,11 @@ if submit:
         st.markdown(f'<h3><b>File Analysis</b></h3>', unsafe_allow_html=True)
 
         #CountLine
-        percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
-        if (percentMatchCounter > 100):
-            st.write("User has " + str(round(percentMatchCounter - 100)) + "% more lines in the program than the average file.")
-        else:
-            st.write("User has " + str(round(100 - percentMatchCounter)) + "% less lines in the program than the average file.",)
+        #percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
+        #if (percentMatchCounter > 100):
+        #    st.write("User has " + str(round(percentMatchCounter - 100)) + "% more lines in the program than the average file.")
+        #else:
+        #    st.write("User has " + str(round(100 - percentMatchCounter)) + "% less lines in the program than the average file.",)
         
         #CountBlankLine
         percentMatchLineBlank = comparison.percentMatch(totalBlankLineCount,"CountLineBlank", Counter)
