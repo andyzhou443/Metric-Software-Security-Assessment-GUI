@@ -42,8 +42,6 @@ df = pd.read_excel(
 
 st.dataframe(df)
 
-
-st.markdown("Upload JAVA source code for code metric analysis")
 st.markdown(f'<b>Upload JAVA source code for code metric analysis</b>', unsafe_allow_html=True)
 file1= st.file_uploader("Choose a file...", type="java")
 submit = st.button('Upload')
@@ -94,7 +92,7 @@ if submit:
         #CountLine
         percentMatchCounter = comparison.percentMatch(Counter,"CountLine", Counter)
         if (percentMatchCounter > 100):
-            st.write("User has " + str(round(percentMatchCounter - 100)) + "% more lines of code than the average file.")
+            st.write("User has " + str(round(percentMatchCounter - 100)) + "% more lines in the program than the average file.")
         else:
             st.write("User has " + str(round(100 - percentMatchCounter)) + "% less lines of code than the average file.",)
         
@@ -111,6 +109,28 @@ if submit:
             st.write("User has " + str(round(percentMatchLineComment - 100)) + "% more comment lines than the average file.")
         else:
             st.write("User has " + str(round(100 - percentMatchLineComment)) + "% less comment lines than the average file.",)
+        
+        #CountLineCode
+        percentMatchCounter = comparison.percentMatch(totalCodeLine,"CountLineCode", Counter)
+        if (percentMatchCounter > 100):
+            st.write("User has " + str(round(percentMatchCounter - 100)) + "% more lines of code than the average file.")
+        else:
+            st.write("User has " + str(round(100 - percentMatchCounter)) + "% less lines of code than the average file.",)
+        
+        #CountClass
+        percentMatchCounter = comparison.percentMatch(totalClasses,"CountClass", Counter)
+        if (percentMatchCounter > 100):
+            st.write("User has " + str(round(percentMatchCounter - 100)) + "% more classes than the average file.")
+        else:
+            st.write("User has " + str(round(100 - percentMatchCounter)) + "% less classes than the average file.",)
+        
+        #RatioCommentToCode
+        percentMatchCounter = comparison.percentMatch(totalCommentLineCount/totalCodeLine,"RatioCommentToCode", Counter)
+        if (percentMatchCounter > 100):
+            st.write("User has a " + str(round(percentMatchCounter - 100)) + "% higher ratio of comments to code than the average file.")
+        else:
+            st.write("User has a " + str(round(100 - percentMatchCounter)) + "% less ratio of comments to code than the average file.",)
+        
         
 st.markdown("")
 st.markdown("Made with ❤️ and ☕")
