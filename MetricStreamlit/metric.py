@@ -8,6 +8,11 @@ import plotly.express as px
 import re           #regex matching
 import comparison
 
+
+st.set_page_config(page_title = "Metric Dataset",
+					page_icon = ":bar_chart:",
+					layour = "wide")
+                    
 st.title("Metric-based Software Security Assessment Model")
 file_ = open("light-mono@2x-8-1.jpg", "rb")
 contents = file_.read()
@@ -27,9 +32,6 @@ st.markdown("To accomplish our goal, we will characterize the software metrics s
 st.markdown("")
 st.markdown("")
 
-st.set_page_config(page_title = "Metric Dataset",
-					page_icon = ":bar_chart:",
-					layour = "wide")
 
 df = pd.read_excel(
 	io='Data.xlsx',
