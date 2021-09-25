@@ -35,8 +35,8 @@ df = pd.read_excel(
 	io='Data.xlsx',
 	engine='openpyxl',
 	sheet_name='Sheet1',
-	skiprows=0,
-	usecols='A:CE',
+	skiprows=1,
+	usecols='D:CE',
 	nrows=128,
 )
 
