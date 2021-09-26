@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# A technologically revolutionary way to automatically keep pushing changes in our program.
+# Some technically advanced CI.
 # Requires some manual prodding with CTRL-C though.
 
 while true; do
